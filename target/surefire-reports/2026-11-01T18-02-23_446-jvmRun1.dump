@@ -1,0 +1,8 @@
+# Created at 2026-11-01T18:02:23.926
+org.junit.platform.launcher.core.DiscoveryIssueException: TestEngine with ID 'junit-jupiter' encountered a critical issue during test discovery:
+
+(1) [ERROR] @AfterAll method 'public void TestLocators.closeBrowser()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).
+    Source: MethodSource [className = 'TestLocators', methodName = 'closeBrowser', methodParameterTypes = '']
+            at TestLocators.closeBrowser(SourceFile:0)
+
+
