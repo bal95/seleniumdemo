@@ -1,6 +1,9 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,16 +21,10 @@ public class TestLocators {
   }
 
   @Test 
-  public void switchTabTest(){
-    for(int i=0;i<10;i++){
-      wd.get("https://www.facebook.com");
-      wd.switchTo().newWindow(WindowType.TAB);
-    }
-    Object[] tabs=wd.getWindowHandles().toArray();
-    int k=tabs.length-1;
-    while(k>0){
-      wd.close();
-      wd.switchTo().window((String)tabs[--k]);
-    }
+  public void openSelenium(){
+    wd.get("https://www.selenium.dev");
+    String text=wd.findElement(By.xpath(
+      "/html/body/div[2]/main/section[1]/div/div/div/p[1]")).getText();
+    assertEquals(true, text.contains("Selenium"));
   }
 }
