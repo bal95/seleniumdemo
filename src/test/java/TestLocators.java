@@ -6,12 +6,16 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestLocators {
   static WebDriver wd;
   @BeforeEach 
   public void driverSetup(){
-    wd=new ChromeDriver();
+    ChromeOptions options =new ChromeOptions();
+    options.addArguments("--headless=new");
+    options.addArguments("--window_size=1920,1080");
+    wd=new ChromeDriver(options);
   }
 
   @AfterAll 
