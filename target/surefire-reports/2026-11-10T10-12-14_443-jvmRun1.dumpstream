@@ -1,0 +1,7 @@
+# Created at 2026-11-10T10:12:14.920
+TestEngine with ID 'junit-jupiter' encountered a critical issue during test discovery:
+
+(1) [ERROR] @AfterAll method 'public void TestLocators.closeDriver()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).
+    Source: MethodSource [className = 'TestLocators', methodName = 'closeDriver', methodParameterTypes = '']
+            at TestLocators.closeDriver(SourceFile:0)
+
